@@ -12,7 +12,7 @@ void Camera::mouseMove(GLFWwindow* window, double Xpos, double Ypos) {
 
     if (dian) {
 
-        std::printf("x=%f,y=%f\n", Xweiyi, Yweiyi);
+        
 
         yaw += Xweiyi / 2;
         pitch += Yweiyi / 2;
@@ -24,6 +24,7 @@ void Camera::mouseMove(GLFWwindow* window, double Xpos, double Ypos) {
         if (yaw == 360)
             yaw = 0;
 
+        //旋转视角
         cfront.x = cos(glm::radians(pitch)) * cos(glm::radians(yaw));
         cfront.y = sin(glm::radians(pitch));
         cfront.z = cos(glm::radians(pitch)) * sin(glm::radians(yaw));
@@ -31,6 +32,9 @@ void Camera::mouseMove(GLFWwindow* window, double Xpos, double Ypos) {
     }
     Xlast = Xpos;
     Ylast = Ypos;
+
+    //去除cfront的y向量,用于移动就不能随意飞
+    cfront_shuiping = glm::vec3(cfront.x, 0, cfront.z);
 }
 
 void Camera::mouseClick(GLFWwindow* window, int button, int action, int mods) {

@@ -20,6 +20,7 @@ extern glm::vec3 cubePositions[];
 extern std::vector<float> triangleVertices;
 extern glm::vec3 cpos;
 extern glm::vec3 cfront;
+extern glm::vec3 cfront_shuiping;
 extern glm::vec3 cup;
 extern GLuint triangleVBO, triangleVAO;
 #endif

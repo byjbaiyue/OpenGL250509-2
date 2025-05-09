@@ -39,22 +39,23 @@ void Key(GLFWwindow* window)
 	}
 	else { cspeed = 0.1; }
 
+	
 	//ÉãÏñ»úÒÆ¶¯
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
 	{
-		cpos += cfront * cspeed;
+		cpos += cfront_shuiping * cspeed;
 	}
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
 	{
-		cpos -= cfront * cspeed;
+		cpos -= cfront_shuiping * cspeed;
 	}
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
 	{
-		cpos -= glm::normalize(glm::cross(cfront, cup)) * cspeed;
+		cpos -= glm::normalize(glm::cross(cfront_shuiping, cup)) * cspeed;
 	}
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 	{
-		cpos += glm::normalize(glm::cross(cfront, cup)) * cspeed;
+		cpos += glm::normalize(glm::cross(cfront_shuiping, cup)) * cspeed;
 	}
 	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
 	{
